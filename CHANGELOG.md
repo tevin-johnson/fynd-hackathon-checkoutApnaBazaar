@@ -2,6 +2,11 @@
 
 Every change ships as a new git tag, so any version can be restored. See README → "Versions and rollback".
 
+## v1.0.2 (2026-11-25)
+
+- Deploy: `vercel.json` now pins the build command (`npm run build`) next to the framework (`nextjs`) and install command (`npm ci`). This makes the existing `fynd_hack` Vercel project build this Next.js app even though its dashboard settings were made for an older Vite app.
+- No app code changes.
+
 ## v1.0.1 (2026-11-25)
 
 - Docs: TEST-PLAN.md rewritten for the shipped app (Apna Bazaar, ₹ prices, delivery city). It now records manual results on desktop **and** mobile and adds MT-07 (location autocomplete).
