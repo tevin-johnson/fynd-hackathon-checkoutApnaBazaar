@@ -387,6 +387,10 @@ input {
   max-width: 1240px;
   margin: 0 auto;
   padding: 2rem 1.25rem 4rem;
+  /* DEF-05: entrance animations (e.g. a new cart line sliding in from +60px)
+     must never stick out past the screen edge, or mobile browsers widen the
+     page. `clip` (not `hidden`) keeps position: sticky working. */
+  overflow-x: clip;
 }
 
 .hero {
@@ -1285,6 +1289,11 @@ input {
 /* ---------- Location combobox ---------- */
 .combo {
   position: relative;
+}
+/* DEF-04: the city input sits in a block wrapper, so it needs an explicit
+   full width to match the Name and Email fields. */
+.combo .form__input {
+  width: 100%;
 }
 .combo__list {
   position: absolute;

@@ -87,9 +87,24 @@
 
 ## 3. Executed results
 
-### 3.1 Manual runs (production build, `next start`, no test hooks)
+### 3.1 Manual runs on the live site (v1.0.3, https://fyndhack.vercel.app)
 
-The manual runs were done in the Chromium browser pane on release-candidate builds of v1.0.0. They were repeated after each fix. Results were read from the live DOM.
+Run by hand in a Chromium browser on 2026-11-25 against the deployed production build (no test hooks: `window.__resetStore` is `undefined`). Desktop at 1024 px wide; mobile at 375×812 with touch emulation. Screenshots are in `docs/evidence/manual/`.
+
+| ID    | Device  | Actual result                                                                                                                                                                                                                       | Result                               | Evidence                                   |
+| ----- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ | ------------------------------------------ |
+| MT-01 | Desktop | **Checkout →** disabled, total ₹0.00. Place Order with the name "Rahul Desktop" showed "Your bag is empty. Add at least one item before placing an order." (`role="alert"`, focus moved to it). The name was kept. 0 confirmations. | **Pass**                             | `desktop-MT-01-empty-cart-blocked.jpg`     |
+| MT-01 | Mobile  | Same result with the name "Anjali Mobile". No horizontal scroll (`scrollWidth` = 375).                                                                                                                                              | **Pass**                             | `mobile-MT-01-empty-cart-blocked.jpg`      |
+| MT-02 | Desktop | 2 × Coffee Mug (₹478.00), then a double-click. A DOM observer recorded the button as `disabled` + `aria-busy="true"` ("Placing your order…"). Result: exactly 1 confirmation, 1 reference `ORD-UTTAKJ`, total ₹478.00.              | **Pass**                             | `desktop-MT-02-double-click-one-order.jpg` |
+| MT-02 | Mobile  | 1 × Water Bottle (₹150.00), then a double-tap. Button seen disabled + busy; exactly 1 confirmation, `ORD-HBY6W2`, ₹150.00. **But** a width monitor showed the page briefly widening to 394 px on the 375 px screen: see **DEF-05**. | **Pass** (order) / **Fail** (layout) | `mobile-MT-02-double-tap-one-order.jpg`    |
+| n/a   | Both    | Exploratory: the Delivery city field is narrower than Name and Email (desktop 206 px vs 403 px; mobile 206 px vs 286 px): see **DEF-04**.                                                                                           | **Fail**                             | visible in both MT-01 screenshots          |
+| MT-05 | Both    | Role, focus and `aria-invalid` verified. **Not tested with a real screen reader** (NVDA / TalkBack).                                                                                                                                | Pass (partial)                       |                                            |
+
+The fixes for DEF-04 and DEF-05 ship in v1.0.4 and are verified by the automated suite (§3.2). The manual live-site pass was **not repeated** after v1.0.4 was deployed.
+
+#### Earlier manual runs (release candidates of v1.0.0, `next start`)
+
+Results read from the DOM; these found DEF-03 and confirmed its first fix.
 
 | ID    | Device  | Actual result                                                                                                                                                                                                                                                                    | Result                  |
 | ----- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------- |
@@ -106,20 +121,20 @@ Local run against a production build (`npm run build:e2e`), commit `v1.0.0`:
 - **Unit tests** (`npm run test:unit`): **19/19 pass**. They cover money/paise math and ₹ formatting, quantity rules, the store, the order reference and delay, the CSP builder, and location search.
 - **Browser tests** (`npx playwright test`): **24/24 pass**, which is 12 tests × 2 projects (`desktop-chrome`, `mobile-pixel7`). `retries: 0`, so nothing is masked. An earlier desktop-only suite was also run with `--repeat-each=3` (18/18) to check for flakiness.
 
-| Spec                    | Test                                                                           | Covers        |
-| ----------------------- | ------------------------------------------------------------------------------ | ------------- |
-| `checkout.spec.ts`      | happy path: confirmation, reference regex, exact total, reset                  | MT-03, MT-06  |
-| `checkout.spec.ts`      | double-click: one confirmation and one `placeOrder` call; viewport not widened | MT-02, DEF-03 |
-| `validation.spec.ts`    | blank name blocked, alert focused, cart and input preserved                    | MT-05         |
-| `validation.spec.ts`    | empty cart blocked                                                             | MT-01         |
-| `quantity.spec.ts`      | typed qty and +/− give the exact total                                         | MT-03         |
-| `quantity.spec.ts`      | -3 / abc rejected, 10000 → 99, 0 removes                                       | MT-04         |
-| `location.spec.ts`      | suggestions, keyboard pick, confirmation shows city                            | MT-07         |
-| `location.spec.ts`      | click pick, exact-name auto-fill on blur                                       | MT-07         |
-| `location.spec.ts`      | unknown city blocked, input kept                                               | MT-07         |
-| `security.spec.ts`      | nonce CSP and hardened headers                                                 | n/a           |
-| `security.spec.ts`      | hydrates with 0 CSP violations and 0 external requests                         | n/a           |
-| `accessibility.spec.ts` | ticker duplicates hidden, Pause button works                                   | DEF-01        |
+| Spec                    | Test                                                                                                   | Covers                |
+| ----------------------- | ------------------------------------------------------------------------------------------------------ | --------------------- |
+| `checkout.spec.ts`      | happy path: confirmation, reference regex, exact total, reset                                          | MT-03, MT-06          |
+| `checkout.spec.ts`      | double-click: one confirmation and one `placeOrder` call; viewport never widened (checked every frame) | MT-02, DEF-03, DEF-05 |
+| `validation.spec.ts`    | blank name blocked, alert focused, cart and input preserved                                            | MT-05                 |
+| `validation.spec.ts`    | empty cart blocked                                                                                     | MT-01                 |
+| `quantity.spec.ts`      | typed qty and +/− give the exact total                                                                 | MT-03                 |
+| `quantity.spec.ts`      | -3 / abc rejected, 10000 → 99, 0 removes                                                               | MT-04                 |
+| `location.spec.ts`      | suggestions, keyboard pick, confirmation shows city                                                    | MT-07                 |
+| `location.spec.ts`      | click pick, exact-name auto-fill on blur; city field full width                                        | MT-07, DEF-04         |
+| `location.spec.ts`      | unknown city blocked, input kept                                                                       | MT-07                 |
+| `security.spec.ts`      | nonce CSP and hardened headers                                                                         | n/a                   |
+| `security.spec.ts`      | hydrates with 0 CSP violations and 0 external requests                                                 | n/a                   |
+| `accessibility.spec.ts` | ticker duplicates hidden, Pause button works                                                           | DEF-01                |
 
 **Evidence** (`docs/evidence/desktop-chrome/` and `docs/evidence/mobile-pixel7/`):
 
@@ -132,11 +147,38 @@ Open a trace with:
 npx playwright show-trace docs/evidence/mobile-pixel7/MT-02-double-click-trace.zip
 ```
 
-CI uploads the same report as the `playwright-report` and `playwright-evidence` artifacts on every run (kept 7 days).
+**CI on GitHub:** every push runs the same suites. The v1.0.3 run (CI + deploy + live header check, all green) is https://github.com/tevin-johnson/fynd-hackathon-checkoutApnaBazaar/actions/runs/45605351651. CI uploads the same report as the `playwright-report` and `playwright-evidence` artifacts on every run (kept 7 days).
 
 ## 4. Defects
 
-Every defect below is real and was found while testing. All three are fixed, and each has a regression check. On desktop, the P1 checks (MT-01, MT-02) found no defects. On mobile, MT-02 found DEF-03.
+Every defect below is real and was found while testing. All five are fixed, and each has a regression check. On desktop, the P1 checks (MT-01, MT-02) found no defects. On mobile, MT-02 found DEF-03 and later DEF-05.
+
+### DEF-05: Mobile page widens when an item is added (regression of DEF-03, found on the live site)
+
+- **Severity:** Medium on mobile. Orders were always correct, but the page could briefly be panned or zoomed sideways.
+- **Found:** manual MT-02 on the live site (v1.0.3), mobile 375 px, with a per-frame width monitor attached.
+- **Steps to reproduce (v1.0.3):**
+  1. Open https://fyndhack.vercel.app on a 375 px touch viewport.
+  2. Tap **Add to cart** on any product.
+  3. Read `window.innerWidth` right after the tap.
+- **Expected:** 375.
+- **Actual:** 394–402 px, staying wide until the next large layout change (e.g. the confirmation appearing).
+- **Root cause:** the new cart line's slide-in animation starts 60 px to the right, so for its first frames it sticks out past the screen edge. The DEF-03 fix only clipped the confirmation card. The DEF-03 regression test only checked the **settled** width, so it missed transient spikes. That is a test gap, now closed.
+- **Evidence:** the strengthened test samples `innerWidth` on every animation frame. Against v1.0.3 it fails on `mobile-pixel7` with **431 px on a 412 px screen** and passes on desktop: `docs/evidence/DEF-05-before-fix/` (failure screenshot + trace).
+- **Fix (v1.0.4):** `.page { overflow-x: clip }`, so no entrance animation inside the page can poke past the edge. (`clip` keeps the sticky sidebar working.) The per-frame regression assertion in `checkout.spec.ts` now passes on both devices.
+
+### DEF-04: Delivery city field narrower than the other fields
+
+- **Severity:** Low (cosmetic).
+- **Found:** manual MT-01 screenshots on the live site (v1.0.3).
+- **Steps to reproduce (v1.0.3):**
+  1. Open the page.
+  2. Compare the widths of the Name and Delivery city inputs.
+- **Expected:** equal widths.
+- **Actual:** city 206 px vs Name 403 px (desktop) / 286 px (mobile).
+- **Root cause:** the city input sits inside a block wrapper (`.combo`) and didn't stretch like its flex-item siblings.
+- **Evidence:** `docs/evidence/manual/desktop-MT-01-empty-cart-blocked.jpg` and `mobile-MT-01-empty-cart-blocked.jpg`.
+- **Fix (v1.0.4):** `.combo .form__input { width: 100% }`. Regression check in `location.spec.ts` compares the two layout widths.
 
 ### DEF-03: The mobile page widens after placing an order (found by MT-02)
 

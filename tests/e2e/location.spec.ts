@@ -41,6 +41,12 @@ test('click/tap picks a suggestion, and an exact city name auto-fills on leaving
 }) => {
   const city = page.getByRole('combobox', { name: /Delivery city/ });
 
+  // DEF-04 regression: the city field is as wide as the Name field. Compare
+  // layout widths (offsetWidth), which ignore the panel's entrance animation.
+  const widthOf = (el: Element) => (el as HTMLElement).offsetWidth;
+  const nameWidth = await page.getByRole('textbox', { name: /^Name/ }).evaluate(widthOf);
+  await expect.poll(() => city.evaluate(widthOf)).toBe(nameWidth);
+
   await city.fill('beng');
   await page.getByRole('option', { name: /Bengaluru/ }).click();
   await expect(city).toHaveValue('Bengaluru, Karnataka');

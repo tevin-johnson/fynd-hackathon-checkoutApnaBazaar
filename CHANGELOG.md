@@ -2,6 +2,12 @@
 
 Every change ships as a new git tag, so any version can be restored. See README → "Versions and rollback".
 
+## v1.0.4 (2026-11-25)
+
+- Fix DEF-05: on mobile, adding an item briefly widened the page, because the new cart line slides in from off-screen. Fixed with `.page { overflow-x: clip }`. The double-click test now checks the page width on every animation frame, not only after things settle.
+- Fix DEF-04: the Delivery city field is now full width like the other fields, with a regression check.
+- Test plan: manual MT-01 / MT-02 re-run on the live site (desktop + mobile) with screenshots in `docs/evidence/manual/`, before-fix evidence for DEF-05, and a link to the green CI run.
+
 ## v1.0.3 (2026-11-25)
 
 - First successful production deploy, live at https://fyndhack.vercel.app. The README now links to it.
