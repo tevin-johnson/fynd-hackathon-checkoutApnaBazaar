@@ -2,6 +2,11 @@
 
 Every change ships as a new git tag, so any version can be restored. See README → "Versions and rollback".
 
+## v1.0.3 (2026-11-25)
+
+- First successful production deploy, live at https://fyndhack.vercel.app. The README now links to it.
+- Deploy configuration: the repository variable `PRODUCTION_URL` now points at the project's real domain (`fyndhack.vercel.app`), so the post-deploy `curl -I` header check tests the right site.
+
 ## v1.0.2 (2026-11-25)
 
 - Deploy: `vercel.json` now pins the build command (`npm run build`) next to the framework (`nextjs`) and install command (`npm ci`). This makes the existing `fynd_hack` Vercel project build this Next.js app even though its dashboard settings were made for an older Vite app.

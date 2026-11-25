@@ -2,6 +2,8 @@
 
 A single-page checkout for a fictional Indian neighbourhood store. It sells two fixed-price products: a **Water Bottle (₹150.00)** and a **Coffee Mug (₹239.00)**. The repo ships with an automated Playwright suite (desktop + mobile), unit tests, a manual test plan with executed results, and secure CI/CD to Vercel's free Hobby tier.
 
+**Live site:** https://fyndhack.vercel.app (deployed automatically from `main` after CI passes)
+
 There is no backend, database, payment provider or external call. Everything runs in the browser.
 
 - **Test plan and results:** [TEST-PLAN.md](TEST-PLAN.md)

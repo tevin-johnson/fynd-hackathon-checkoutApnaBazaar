@@ -1,6 +1,6 @@
 {
   "name": "fynd-hackathon-checkout",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": true,
   "type": "module",
   "description": "Mini checkout (Next.js + Zustand) with Playwright browser tests and a manual test plan.",
