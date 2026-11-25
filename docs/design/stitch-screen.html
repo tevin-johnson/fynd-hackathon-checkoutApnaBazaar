@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-background":"#1c1b1b","outline-variant":"#e3bdc5","tertiary-fixed-dim":"#dec800","surface-container":"#f0edec","surface-container-lowest":"#ffffff","on-surface-variant":"#5b3f46","on-tertiary-fixed-variant":"#504700","error":"#ba1a1a","on-secondary-container":"#efefff","on-error":"#ffffff","outline":"#8f6f76","secondary":"#0040df","on-error-container":"#93000a","surface-container-low":"#f6f3f2","surface-container-high":"#ebe7e7","surface-container-highest":"#e5e2e1","primary-container":"#e20773","on-primary-fixed":"#3f001b","on-surface":"#1c1b1b","on-primary":"#ffffff","on-primary-container":"#fffbff","on-primary-fixed-variant":"#8e0046","primary-fixed":"#ffd9e1","inverse-on-surface":"#f3f0ef","tertiary-container":"#c0ad00","secondary-container":"#2d5bff","tertiary":"#6a5f00","on-secondary":"#ffffff","background":"#fcf9f8","inverse-surface":"#313030","surface-dim":"#dcd9d9","on-secondary-fixed":"#001355","on-secondary-fixed-variant":"#0035bd","primary-fixed-dim":"#ffb1c5","secondary-fixed":"#dde1ff","surface":"#fcf9f8","surface-bright":"#fcf9f8","inverse-primary":"#ffb1c5","error-container":"#ffdad6","surface-variant":"#e5e2e1","primary":"#b6005b","on-tertiary-fixed":"#201c00","secondary-fixed-dim":"#b8c3ff","surface-tint":"#ba005d","tertiary-fixed":"#fde400","on-tertiary-container":"#484000","on-tertiary":"#ffffff"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"gutter":"1.5rem","space-sm":"0.5rem","space-xs":"0.25rem","space-2xl":"4rem","gutter-mobile":"1rem","space-xl":"2.5rem","space-lg":"1.5rem","margin":"3rem","margin-mobile":"1.25rem","space-md":"1rem"},"fontFamily":{"headline-lg-mobile":["Bricolage Grotesque"],"display":["Bricolage Grotesque"],"body-md":["Space Grotesk"],"headline-lg":["Bricolage Grotesque"],"label-sm":["Space Grotesk"],"label-lg":["Space Grotesk"],"display-mobile":["Bricolage Grotesque"],"headline-sm":["Bricolage Grotesque"],"headline-md":["Bricolage Grotesque"],"title":["Space Grotesk"],"body-lg":["Space Grotesk"]},"fontSize":{"headline-lg-mobile":["32px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"700"}],"display":["72px",{"lineHeight":"76px","letterSpacing":"-0.03em","fontWeight":"800"}],"body-md":["16px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"400"}],"headline-lg":["48px",{"lineHeight":"52px","letterSpacing":"-0.02em","fontWeight":"800"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"700"}],"label-lg":["14px",{"lineHeight":"18px","letterSpacing":"0.05em","fontWeight":"700"}],"display-mobile":["44px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"800"}],"headline-sm":["24px",{"lineHeight":"30px","letterSpacing":"0em","fontWeight":"700"}],"headline-md":["32px",{"lineHeight":"38px","letterSpacing":"-0.01em","fontWeight":"700"}],"title":["20px",{"lineHeight":"26px","letterSpacing":"0em","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"500"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface min-h-screen selection:bg-tertiary-fixed selection:text-on-tertiary-fixed"><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-low"><div class="bg-tertiary-fixed text-on-tertiary-fixed py-space-xs px-gutter border-b-4 border-on-surface overflow-hidden"><div class="flex items-center justify-between max-w-7xl mx-auto font-label-sm text-label-sm uppercase tracking-wider"><div class="flex items-center gap-space-lg animate-pulse"><span>✨ WORLDWIDE POSTAGE</span><span>✨ LIMITED RISO RUNS</span><span>✨ ALL SALES SUPPORT INDIE PRINTMAKERS</span></div><div class="hidden md:flex items-center gap-space-sm"><span class="inline-block px-space-xs py-0.5 bg-surface-container-lowest text-on-surface border-2 border-on-surface rotate-2 font-label-sm text-label-sm shadow-[2px_2px_0px_#1c1b1b]">100% ARTISAN WEIRDNESS</span><span class="inline-block px-space-xs py-0.5 bg-primary-fixed text-on-primary-fixed border-2 border-on-surface -rotate-1 font-label-sm text-label-sm shadow-[2px_2px_0px_#1c1b1b]">CART SECURE &amp; FUNKY</span></div></div></div><div class="h-20 bg-surface border-b-4 border-on-surface shadow-[0_6px_0px_#1c1b1b]"><div class="max-w-7xl mx-auto px-gutter h-full flex items-center justify-between"><div class="flex items-center gap-space-md"><img alt="Apna Bazaar Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrATs1nKe6-krb4FmZRlFcZeQlOfvGsWcm7ZqW3066cRVzTWPq7IxOKtb3QdtL8wJPJq5HSgOGIX22zAIkOhZMPvEvm1117126XlGeRo7T7_xHiyk_FpJtq1HXb7fWA1fmJJjWSKfqzkCJRJsykvDhFY_Lrhioxkke1gXPuZnX22bN5fkWhbEa0r3fk9CuUzjSkMa_TYo7MRowosCBgNZeld3F7_JCb1MOntvNsK77Vv"/><span class="font-headline-sm text-headline-sm uppercase tracking-tight text-primary">Apna Bazaar</span><span class="hidden lg:inline-block font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed border-2 border-on-surface px-space-xs py-0.5 rotate-[-2deg] shadow-[2px_2px_0px_#1c1b1b]">PRINT EDITIONS</span></div><nav class="hidden md:flex items-center gap-space-md" data-active-classes="bg-primary text-on-primary border-2 border-on-surface shadow-[3px_3px_0px_#1c1b1b]"><a class="font-label-lg text-label-lg uppercase px-space-sm py-space-xs text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface border-2 border-transparent transition-all" data-path="catalog" href="#">Catalog</a><a aria-current="page" class="font-label-lg uppercase px-space-sm py-space-xs transition-all bg-primary text-on-primary border-2 border-on-surface shadow-[3px_3px_0px_#1c1b1b]" data-path="single-page-checkout" href="#">Checkout</a><a class="font-label-lg text-label-lg uppercase px-space-sm py-space-xs text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface border-2 border-transparent transition-all" data-path="print-vault" href="#">Print Vault</a><a class="font-label-lg text-label-lg uppercase px-space-sm py-space-xs text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface border-2 border-transparent transition-all" data-path="about-studio" href="#">About Studio</a></nav><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container-lowest border-2 border-on-surface shadow-[3px_3px_0px_#1c1b1b]"><span class="material-symbols-outlined text-primary text-[20px]">shopping_bag</span><span class="font-label-sm text-label-sm uppercase text-on-surface">3 Items</span><span class="w-2 h-2 rounded-full bg-primary-container inline-block"></span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center border-2 border-on-surface shadow-[2px_2px_0px_#1c1b1b]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-[7rem] bg-surface relative min-h-screen"><div class="flex flex-col w-full relative">
+<!-- Floating Memphis Geometric Confetti / Registration Marks Background Layer -->
+<div class="absolute inset-0 pointer-events-none overflow-hidden z-0 select-none opacity-40">
+<!-- Squiggle 1 -->
+<svg class="absolute top-12 left-6 w-28 h-12 text-primary rotate-12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="4" viewbox="0 0 120 40">
+<path d="M5 20 Q 20 5, 35 20 T 65 20 T 95 20 T 115 20"></path>
+</svg>
+<!-- Dot Grid Matrix (Top Center) -->
+<div class="absolute top-20 right-1/3 w-36 h-28 opacity-60 grid grid-cols-6 gap-3">
+<span class="w-2.5 h-2.5 rounded-full bg-on-surface"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-on-surface"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-on-surface"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-on-surface"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-on-surface"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-on-surface"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-on-surface"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-on-surface"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-on-surface"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-on-surface"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-on-surface"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-on-surface"></span>
+</div>
+<!-- Registration Crosshair -->
+<div class="absolute top-96 left-8 flex items-center justify-center w-12 h-12 border-2 border-on-surface rounded-full">
+<div class="w-10 h-0.5 bg-on-surface absolute"></div>
+<div class="h-10 w-0.5 bg-on-surface absolute"></div>
+</div>
+<!-- Wavy Zig-Zag Accent -->
+<svg class="absolute bottom-40 right-10 w-32 h-16 text-secondary-container rotate-[-15deg]" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4" viewbox="0 0 100 40">
+<polyline points="5,30 25,10 45,30 65,10 85,30 95,20"></polyline>
+</svg>
+<!-- Geometric Triangle Stamp -->
+<div class="absolute top-[48%] left-1/4 w-0 h-0 border-l-[18px] border-l-transparent border-r-[18px] border-r-transparent border-b-[32px] border-b-primary rotate-45"></div>
+<!-- Quarter Circle Arch -->
+<div class="absolute bottom-24 left-1/3 w-16 h-16 border-t-4 border-r-4 border-on-surface rounded-tr-full"></div>
+</div>
+<!-- Main Grid Content Area -->
+<div class="relative z-10 max-w-7xl mx-auto px-gutter py-space-lg w-full">
+<!-- Top Headline Banner -->
+<div class="mb-space-xl flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="space-y-space-xs">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-tertiary-fixed text-on-tertiary-fixed border-[3px] border-on-surface shadow-[4px_4px_0_#1c1b1b] rotate-[-1.5deg]">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">FRESH DROP // BATCH #042</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight">
+          Checkout <span class="bg-primary-container text-on-primary-container px-space-xs inline-block rotate-1 shadow-[4px_4px_0_#1c1b1b]">&amp; The Goods</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+          Risograph screenprints, tactile apparel, and analog treasures. Real hands, soy-based ink, zero algorithmic boredom.
+        </p>
+</div>
+<!-- Quick Trust Pill -->
+<div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-space-sm border-[3px] border-on-surface shadow-[4px_4px_0_#1c1b1b]">
+<span class="material-symbols-outlined text-secondary-container">local_shipping</span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface">Worldwide tracked eco-dispatch</span>
+</div>
+</div>
+<!-- 2-Column Responsive Workspace -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- ================= LEFT COLUMN: "The Goods" ================= -->
+<div class="lg:col-span-6 flex flex-col gap-space-lg">
+<!-- Column Overline -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-3.5 h-3.5 bg-primary-container border-2 border-on-surface rotate-45"></div>
+<h2 class="font-headline-sm text-headline-sm uppercase text-on-surface">The Fresh Pressings</h2>
+</div>
+<span class="font-label-sm text-label-sm uppercase bg-surface-container-high px-space-sm py-0.5 border-2 border-on-surface">Edition Limit: 75</span>
+</div>
+<!-- Product Card 1: Canvas Tote -->
+<div class="group relative bg-surface-container-lowest border-[3px] border-on-surface rounded-xl p-space-lg shadow-[6px_6px_0_#1c1b1b] transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[8px_8px_0_#1c1b1b]">
+<!-- Rotated Cart Badge -->
+<div class="absolute -top-3.5 right-6 z-20 bg-tertiary-fixed text-on-tertiary-fixed border-[2.5px] border-on-surface px-space-sm py-0.5 rotate-[-3deg] shadow-[3px_3px_0_#1c1b1b] font-label-sm text-label-sm uppercase" id="badge-tote">
+            In cart: <span id="badge-tote-count">1</span>
+</div>
+<div class="flex flex-col sm:flex-row gap-space-md">
+<!-- Riso Art Image Block -->
+<div class="w-full sm:w-44 h-48 sm:h-auto bg-surface-container border-[3px] border-on-surface rounded-lg overflow-hidden relative flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Chunky graphic risograph print of a natural unbleached cotton tote bag with vibrant neon hot pink and electric blue geometric Memphis patterns, dots, screenprint misregistration, high contrast studio lighting, 90s aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX5sLI0hOZp9h_ItE-4YofMC2Vz_ZuDXD-UXiOa2mNeNwpGRB6amc504VPuhLCL1ReDE_KWlF1OVjOE6XMXwQ_yEscXfw0MGCUAzu7cpMG_vNV-sFO2mlGQM9g3XSHv35ZsumBXUd0aeX3ZV7XKDkwK5MOAG6zVG7th8kJilYkGP3xi_DY5y2COI5jKc9JDFdIi05E2WAlPvU98zUTYU31QAIG8LaIa7HHMmH5rpuBAItidi75KXhQfYZof7JH4Q"/>
+<div class="absolute bottom-2 left-2 bg-secondary-container text-on-secondary px-1.5 py-0.5 border-2 border-on-surface font-label-sm text-label-sm uppercase shadow-[2px_2px_0_#1c1b1b]">
+                3-Pass Riso
+              </div>
+</div>
+<!-- Details -->
+<div class="flex flex-col justify-between flex-1 gap-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Wearable Canvas #01</span>
+<h3 class="font-title text-title text-on-surface uppercase mt-0.5">Heavyweight Risograph Canvas Tote</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs text-sm">
+                  100% organic unbleached cotton, screenprinted with triple-layered soy-based inks. Built for heavy vinyl records &amp; sketchbooks.
+                </p>
+</div>
+<div class="flex items-center justify-between pt-space-xs border-t-2 border-surface-container-high">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">$24.00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">USD</span>
+</div>
+<button aria-label="Add Heavyweight Risograph Canvas Tote to Bag" class="px-space-md py-space-sm bg-primary-container text-on-primary font-label-lg text-label-lg uppercase border-[3px] border-on-surface shadow-[4px_4px_0_#1c1b1b] hover:bg-tertiary-fixed hover:text-on-tertiary-fixed active:translate-x-1 active:translate-y-1 active:shadow-[1px_1px_0_#1c1b1b] transition-all flex items-center gap-space-xs focus-visible:ring-4 focus-visible:ring-on-surface focus-visible:outline-none" id="add-tote-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Add to Bag</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 2: Enamel Mug -->
+<div class="group relative bg-surface-container-lowest border-[3px] border-on-surface rounded-xl p-space-lg shadow-[6px_6px_0_#1c1b1b] transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[8px_8px_0_#1c1b1b]">
+<!-- Rotated Cart Badge -->
+<div class="absolute -top-3.5 right-6 z-20 bg-secondary-fixed text-on-secondary-fixed border-[2.5px] border-on-surface px-space-sm py-0.5 rotate-[2.5deg] shadow-[3px_3px_0_#1c1b1b] font-label-sm text-label-sm uppercase" id="badge-mug">
+            In cart: <span id="badge-mug-count">2</span>
+</div>
+<div class="flex flex-col sm:flex-row gap-space-md">
+<!-- Riso Art Image Block -->
+<div class="w-full sm:w-44 h-48 sm:h-auto bg-surface-container border-[3px] border-on-surface rounded-lg overflow-hidden relative flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Campfire enamel steel coffee mug painted in electric cobalt blue and vivid tangerine orange, featuring Memphis squiggles, half-tone steam clouds, stamped typography 'MAKE WEIRD ART', warm studio paper background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLOSM1SzoziDxZ_jlQ9m7tkaeAItDKl4-_zzibvP8VeisxwqgLMzIGN8bvLSGNZLi8OlT_QtrACJWBE7YHDyurPNXb46CwmNunBwHNgWXrIzvL7iHr02aoURYfr3BsC02SAZPvjMt1nnTzvSpXTtVcyNjJOIpzGWG9x_H_ci2ccwu0rZ8CkTlr0nxpR_QeV5qMrosvXgnKMiojSoUhcFKRh7ivKLXtboBkaVUwhlWwuAzkE6edB1QMrtp0bui0fg"/>
+<div class="absolute bottom-2 left-2 bg-tertiary-fixed text-on-tertiary-fixed px-1.5 py-0.5 border-2 border-on-surface font-label-sm text-label-sm uppercase shadow-[2px_2px_0_#1c1b1b]">
+                Hand-Dipped
+              </div>
+</div>
+<!-- Details -->
+<div class="flex flex-col justify-between flex-1 gap-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Ceramic &amp; Steel #09</span>
+<h3 class="font-title text-title text-on-surface uppercase mt-0.5">Campfire Enamel Studio Mug</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs text-sm">
+                  Durable steel core, hand-dipped enamel glaze with cheeky studio mantra "Make Weird Art" in cobalt &amp; tangerine.
+                </p>
+</div>
+<div class="flex items-center justify-between pt-space-xs border-t-2 border-surface-container-high">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">$12.50</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">USD</span>
+</div>
+<button aria-label="Add Campfire Enamel Studio Mug to Bag" class="px-space-md py-space-sm bg-secondary-container text-on-secondary font-label-lg text-label-lg uppercase border-[3px] border-on-surface shadow-[4px_4px_0_#1c1b1b] hover:bg-tertiary-fixed hover:text-on-tertiary-fixed active:translate-x-1 active:translate-y-1 active:shadow-[1px_1px_0_#1c1b1b] transition-all flex items-center gap-space-xs focus-visible:ring-4 focus-visible:ring-on-surface focus-visible:outline-none" id="add-mug-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Add to Bag</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bonus Studio Perk Banner -->
+<div class="p-space-md bg-tertiary-fixed/30 border-[3px] border-dashed border-on-surface rounded-xl flex items-center gap-space-md shadow-[4px_4px_0_#1c1b1b]">
+<div class="w-12 h-12 bg-tertiary-fixed border-2 border-on-surface rounded-full flex items-center justify-center flex-shrink-0 shadow-[2px_2px_0_#1c1b1b] rotate-[-6deg]">
+<span class="material-symbols-outlined text-on-tertiary-fixed text-[26px]">auto_awesome</span>
+</div>
+<div>
+<p class="font-title text-title text-on-surface uppercase text-base">✦ Studio Gift Included ✦</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Every order leaves the pressroom with a free holographic sticker mini-pack and a stamped archival riso card.</p>
+</div>
+</div>
+</div>
+<!-- ================= RIGHT COLUMN: "Your Bag & Fast Checkout" ================= -->
+<div class="lg:col-span-6 flex flex-col gap-space-lg">
+<!-- Column Header with live animated pill -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary-container text-[28px]">shopping_bag</span>
+<h2 class="font-headline-sm text-headline-sm uppercase text-on-surface">Your Bag</h2>
+</div>
+<div class="inline-flex items-center gap-1.5 px-space-sm py-1 bg-primary text-on-primary border-2 border-on-surface shadow-[3px_3px_0_#1c1b1b] font-label-sm text-label-sm uppercase">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed animate-ping"></span>
+<span id="header-items-count">3 Items Loaded</span>
+</div>
+</div>
+<!-- Empty Cart Notice (Dynamic Toggle) -->
+<div class="hidden bg-surface-container-lowest border-[3px] border-on-surface rounded-xl p-space-xl text-center shadow-[6px_6px_0_#1c1b1b] space-y-space-md" id="empty-cart-state">
+<div class="w-16 h-16 bg-tertiary-fixed border-[3px] border-on-surface rounded-full flex items-center justify-center mx-auto shadow-[4px_4px_0_#1c1b1b] rotate-6">
+<span class="material-symbols-outlined text-[32px] text-on-surface">palette</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface">Oh funk! Your bag is empty.</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto">
+            It's quiet as an unprinted ream of French Paper. Tap "Add to Bag" on any goods to bring back the funk!
+          </p>
+<button class="inline-flex items-center gap-space-xs px-space-lg py-space-sm bg-primary-container text-on-primary border-[3px] border-on-surface font-label-lg text-label-lg uppercase shadow-[4px_4px_0_#1c1b1b] hover:bg-tertiary-fixed hover:text-on-tertiary-fixed transition-all" id="restore-cart-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+<span>Reload Demo Goods</span>
+</button>
+</div>
+<!-- Active Bag Items Card -->
+<div class="bg-surface-container-lowest border-[3px] border-on-surface rounded-xl p-space-md shadow-[6px_6px_0_#1c1b1b] space-y-space-md" id="cart-items-container">
+<!-- Line Item 1: Tote -->
+<div class="flex items-center justify-between gap-space-sm p-space-sm bg-surface rounded-lg border-2 border-on-surface transition-all" id="cart-item-tote">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-14 h-14 bg-surface-container-high border-2 border-on-surface rounded overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close up crop of unbleached cotton risograph tote bag in pink and electric blue" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOLpdTJgFB_b76_dFCyGKvyfVCcGNaeuVyEbfOsS_AxZgCAx6bAmOuv3ZriPxtkq5GPmhPDMd9AEC10djvgIiPlOMpp0DOwKSq8l_9CvoRqmpTcfVgGJIxC_mkxs9ZnYDFwQ-Muv320VXPcVuPuPGZn8-GlQDV4wn3XHmegPn8AcG298Au6CgDcn18YxGB78ZR3BdbxRzSPEZpbY0u-MAgvcXdUio9tX62a87H2fJQuQDrVPS5I1Xa8SujkKBZGA"/>
+</div>
+<div class="min-w-0">
+<h4 class="font-title text-title text-on-surface uppercase text-sm truncate">Risograph Canvas Tote</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">$24.00 ea</p>
+</div>
+</div>
+<!-- Stepper Controls -->
+<div class="flex items-center gap-space-md flex-shrink-0">
+<div class="inline-flex items-center border-2 border-on-surface bg-surface-container-lowest shadow-[2px_2px_0_#1c1b1b]">
+<button aria-label="Decrease quantity of Canvas Tote" class="w-8 h-8 flex items-center justify-center font-headline-sm text-sm text-on-surface hover:bg-surface-container-high active:bg-tertiary-fixed border-r-2 border-on-surface focus-visible:ring-2 focus-visible:ring-on-surface" id="tote-dec" type="button">−</button>
+<span class="w-9 text-center font-title text-sm text-on-surface font-bold" id="tote-qty">1</span>
+<button aria-label="Increase quantity of Canvas Tote" class="w-8 h-8 flex items-center justify-center font-headline-sm text-sm text-on-surface hover:bg-surface-container-high active:bg-tertiary-fixed border-l-2 border-on-surface focus-visible:ring-2 focus-visible:ring-on-surface" id="tote-inc" type="button">+</button>
+</div>
+<!-- Line Total & Remove -->
+<div class="text-right w-16">
+<span class="font-title text-title text-on-surface block text-base" id="tote-total">$24.00</span>
+</div>
+<button aria-label="Remove Canvas Tote from cart" class="w-8 h-8 rounded bg-error-container text-on-error-container border-2 border-on-surface flex items-center justify-center hover:bg-error hover:text-on-error shadow-[2px_2px_0_#1c1b1b] active:translate-x-0.5 active:translate-y-0.5 transition-all" id="tote-remove" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- Line Item 2: Mug -->
+<div class="flex items-center justify-between gap-space-sm p-space-sm bg-surface rounded-lg border-2 border-on-surface transition-all" id="cart-item-mug">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-14 h-14 bg-surface-container-high border-2 border-on-surface rounded overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close up crop of cobalt campfire enamel mug with Memphis orange squiggles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH0Oc20rdJAxCc101rWs0BCfNWpUJfjvOxyqxjThLAZjugLjcSocFmXMRejK262hgtelvDoPchLL3k8uYEoCDyVsjlRpHquQGl1FPzEeQ45n3aI2PVjLYDvaNb8v30JXXDKnj_Hiah9FrTXYccA4kXDVrttU0-PPrU-nKagHhqN7LQXOGUpgyPXXEKuwQ0SVzd7XlIlT7QsQkHq1FEflqFJw2SlatIhKfpMXqpJSyhMpSn9EJXWvWPr6ifBM7bqg"/>
+</div>
+<div class="min-w-0">
+<h4 class="font-title text-title text-on-surface uppercase text-sm truncate">Campfire Enamel Mug</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">$12.50 ea</p>
+</div>
+</div>
+<!-- Stepper Controls -->
+<div class="flex items-center gap-space-md flex-shrink-0">
+<div class="inline-flex items-center border-2 border-on-surface bg-surface-container-lowest shadow-[2px_2px_0_#1c1b1b]">
+<button aria-label="Decrease quantity of Enamel Mug" class="w-8 h-8 flex items-center justify-center font-headline-sm text-sm text-on-surface hover:bg-surface-container-high active:bg-tertiary-fixed border-r-2 border-on-surface focus-visible:ring-2 focus-visible:ring-on-surface" id="mug-dec" type="button">−</button>
+<span class="w-9 text-center font-title text-sm text-on-surface font-bold" id="mug-qty">2</span>
+<button aria-label="Increase quantity of Enamel Mug" class="w-8 h-8 flex items-center justify-center font-headline-sm text-sm text-on-surface hover:bg-surface-container-high active:bg-tertiary-fixed border-l-2 border-on-surface focus-visible:ring-2 focus-visible:ring-on-surface" id="mug-inc" type="button">+</button>
+</div>
+<!-- Line Total & Remove -->
+<div class="text-right w-16">
+<span class="font-title text-title text-on-surface block text-base" id="mug-total">$25.00</span>
+</div>
+<button aria-label="Remove Enamel Mug from cart" class="w-8 h-8 rounded bg-error-container text-on-error-container border-2 border-on-surface flex items-center justify-center hover:bg-error hover:text-on-error shadow-[2px_2px_0_#1c1b1b] active:translate-x-0.5 active:translate-y-0.5 transition-all" id="mug-remove" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Summary Calculation Box -->
+<div class="bg-surface-container-lowest border-[3px] border-on-surface rounded-xl p-space-lg shadow-[6px_6px_0_#1c1b1b] space-y-space-sm">
+<div class="flex justify-between items-center font-body-md text-body-md text-on-surface">
+<span>Items Subtotal (<span id="summary-qty-count">3</span>)</span>
+<span class="font-title text-title text-on-surface text-base" id="summary-subtotal">$49.00</span>
+</div>
+<div class="flex justify-between items-center font-body-md text-body-md text-on-surface">
+<span class="flex items-center gap-1.5">
+<span>Flat Standard Funky Postage</span>
+<span class="material-symbols-outlined text-[16px] text-secondary-container" title="Protected in thick cardboard mailers">verified</span>
+</span>
+<span class="font-title text-title text-on-surface text-base" id="summary-shipping">$5.00</span>
+</div>
+<div class="flex justify-between items-center font-body-md text-body-md text-on-surface-variant">
+<span>Studio Tax Exemption</span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase bg-tertiary-fixed px-1.5 py-0.5 border border-on-surface">$0.00</span>
+</div>
+<!-- Total Highlight Bar -->
+<div class="mt-space-md pt-space-sm border-t-4 border-on-surface">
+<div class="bg-tertiary-fixed text-on-tertiary-fixed p-space-md border-[3px] border-on-surface shadow-[4px_4px_0_#1c1b1b] flex items-center justify-between rotate-[-0.5deg]">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest block text-on-tertiary-fixed">TOTAL AMOUNT DUE</span>
+<span class="font-body-md text-xs text-on-tertiary-fixed/80">Includes art-safe bubble sleeve</span>
+</div>
+<div class="text-right">
+<span class="font-headline-lg text-headline-lg text-on-tertiary-fixed uppercase font-extrabold tracking-tight" id="big-order-total">$54.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Checkout Form Section -->
+<form class="bg-surface-container-lowest border-[3px] border-on-surface rounded-xl p-space-lg shadow-[6px_6px_0_#1c1b1b] space-y-space-md" id="checkout-form" novalidate="">
+<div class="flex items-center justify-between pb-space-xs border-b-2 border-on-surface">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary-container text-[22px]">lock</span>
+<h3 class="font-title text-title text-on-surface uppercase text-base">Quick Dispatch Details</h3>
+</div>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span> No Spam Ever
+            </span>
+</div>
+<!-- Accessible Red Alert Message Area (Triggered on validation error) -->
+<div class="hidden p-space-sm bg-error-container text-on-error-container border-[3px] border-on-surface rounded-lg shadow-[4px_4px_0_#1c1b1b] flex items-center gap-space-sm" id="validation-alert" role="alert">
+<span class="material-symbols-outlined text-error text-[24px] flex-shrink-0">warning</span>
+<div class="text-sm font-title font-bold">
+              Whoops! Please enter your name so we know where to send the funk parcel.
+            </div>
+</div>
+<!-- Name Input -->
+<div class="space-y-1">
+<label class="block font-label-lg text-label-lg text-on-surface uppercase" for="full-name">
+              Full Name <span class="text-error font-bold">*</span>
+</label>
+<input class="w-full px-space-md py-space-sm bg-surface border-[3px] border-on-surface rounded-md shadow-[3px_3px_0_#1c1b1b] font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-4 focus:ring-secondary-container transition-all" id="full-name" name="fullName" placeholder="e.g. Jean-Michel Funk" required="" type="text"/>
+</div>
+<!-- Email Input -->
+<div class="space-y-1">
+<div class="flex justify-between items-center">
+<label class="block font-label-lg text-label-lg text-on-surface uppercase" for="email-address">
+                Email Address <span class="font-label-sm text-label-sm text-on-surface-variant lowercase">(optional)</span>
+</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant">For dispatch tracking</span>
+</div>
+<input class="w-full px-space-md py-space-sm bg-surface border-[3px] border-on-surface rounded-md shadow-[3px_3px_0_#1c1b1b] font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:ring-4 focus:ring-secondary-container transition-all" id="email-address" name="email" placeholder="your.funk@studio.art" type="email"/>
+</div>
+<!-- Giant Neo-Brutalist Place Order CTA -->
+<div class="pt-space-xs">
+<button class="w-full py-space-md px-space-lg bg-primary-container text-on-primary-container border-[4px] border-on-surface rounded-xl shadow-[8px_8px_0_#1c1b1b] font-headline-sm text-headline-sm uppercase tracking-wide hover:bg-tertiary-fixed hover:text-on-tertiary-fixed hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[10px_10px_0_#1c1b1b] active:translate-x-1 active:translate-y-1 active:shadow-[2px_2px_0_#1c1b1b] transition-all flex items-center justify-center gap-space-sm focus-visible:ring-4 focus-visible:ring-on-surface focus-visible:outline-none disabled:opacity-40 disabled:pointer-events-none disabled:shadow-none" id="place-order-btn" type="submit">
+<span class="material-symbols-outlined text-[26px]">bolt</span>
+<span id="cta-total-label">PLACE ORDER — $54.00</span>
+<span class="material-symbols-outlined text-[26px]">bolt</span>
+</button>
+</div>
+<!-- Payment Security Chips -->
+<div class="flex flex-wrap items-center justify-center gap-space-xs pt-space-xs">
+<span class="px-space-xs py-0.5 bg-surface-container-high border-2 border-on-surface text-[11px] font-label-sm uppercase shadow-[1px_1px_0_#1c1b1b]">Apple Pay</span>
+<span class="px-space-xs py-0.5 bg-surface-container-high border-2 border-on-surface text-[11px] font-label-sm uppercase shadow-[1px_1px_0_#1c1b1b]">Visa / MC</span>
+<span class="px-space-xs py-0.5 bg-surface-container-high border-2 border-on-surface text-[11px] font-label-sm uppercase shadow-[1px_1px_0_#1c1b1b]">PayPal</span>
+<span class="px-space-xs py-0.5 bg-surface-container-high border-2 border-on-surface text-[11px] font-label-sm uppercase shadow-[1px_1px_0_#1c1b1b]">Klarna 0%</span>
+<span class="px-space-xs py-0.5 bg-secondary-fixed text-on-secondary-fixed border-2 border-on-surface text-[11px] font-label-sm uppercase shadow-[1px_1px_0_#1c1b1b]">256-Bit SSL</span>
+</div>
+</form>
+</div>
+</div>
+</div>
+<!-- Celebratory Success Modal Overlay -->
+<div aria-labelledby="success-title" aria-modal="true" class="fixed inset-0 z-50 bg-on-surface/75 backdrop-blur-sm hidden items-center justify-center p-gutter" id="success-modal" role="dialog">
+<div class="bg-surface-container-lowest border-[4px] border-on-surface rounded-2xl p-space-xl max-w-lg w-full shadow-[12px_12px_0_#1c1b1b] relative animate-bounce-short">
+<!-- Top Memphis ribbon -->
+<div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-tertiary-fixed text-on-tertiary-fixed border-[3px] border-on-surface px-space-lg py-1 font-label-lg text-label-lg uppercase rotate-[-2deg] shadow-[4px_4px_0_#1c1b1b] whitespace-nowrap">
+        PRINT RUN CONFIRMED! 🎨
+      </div>
+<div class="text-center space-y-space-md pt-space-sm">
+<div class="w-20 h-20 bg-primary-container text-on-primary-container border-[3px] border-on-surface rounded-full flex items-center justify-center mx-auto shadow-[4px_4px_0_#1c1b1b] rotate-6">
+<span class="material-symbols-outlined text-[42px]">celebration</span>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface" id="success-title">
+          Order Placed! You're officially funky.
+        </h3>
+<div class="bg-surface p-space-md border-2 border-on-surface text-left space-y-1 shadow-[3px_3px_0_#1c1b1b]">
+<div class="flex justify-between font-label-sm text-label-sm uppercase text-on-surface-variant">
+<span>Order Reference</span>
+<span class="text-on-surface font-bold">#FF-90210</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm uppercase text-on-surface-variant">
+<span>Recipient</span>
+<span class="text-on-surface font-bold" id="modal-recipient">Jean-Michel</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm uppercase text-on-surface-variant">
+<span>Total Debited</span>
+<span class="text-primary font-bold" id="modal-amount">$54.00</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">
+          Our printmakers are already loading the soya inks. An artisanal confirmation flyer will be prepped for dispatch.
+        </p>
+<button class="w-full py-space-sm bg-secondary-container text-on-secondary border-[3px] border-on-surface font-headline-sm text-headline-sm uppercase shadow-[4px_4px_0_#1c1b1b] hover:bg-tertiary-fixed hover:text-on-tertiary-fixed transition-all" id="close-modal-btn" type="button">
+          Awesome, Take Me Back!
+        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Client-Side State Logic -->
+<script>
+  (function() {
+    // Pricing constants
+    const PRICE_TOTE = 24.00;
+    const PRICE_MUG = 12.50;
+    const SHIPPING_COST = 5.00;
+
+    // Cart Quantities
+    let toteQty = 1;
+    let mugQty = 2;
+
+    // Elements
+    const toteQtyEl = document.getElementById('tote-qty');
+    const mugQtyEl = document.getElementById('mug-qty');
+    const toteTotalEl = document.getElementById('tote-total');
+    const mugTotalEl = document.getElementById('mug-total');
+    const summaryQtyCountEl = document.getElementById('summary-qty-count');
+    const summarySubtotalEl = document.getElementById('summary-subtotal');
+    const summaryShippingEl = document.getElementById('summary-shipping');
+    const bigOrderTotalEl = document.getElementById('big-order-total');
+    const ctaTotalLabelEl = document.getElementById('cta-total-label');
+    const headerItemsCountEl = document.getElementById('header-items-count');
+    const badgeToteCountEl = document.getElementById('badge-tote-count');
+    const badgeMugCountEl = document.getElementById('badge-mug-count');
+    const badgeTote = document.getElementById('badge-tote');
+    const badgeMug = document.getElementById('badge-mug');
+
+    const cartItemTote = document.getElementById('cart-item-tote');
+    const cartItemMug = document.getElementById('cart-item-mug');
+    const cartItemsContainer = document.getElementById('cart-items-container');
+    const emptyCartState = document.getElementById('empty-cart-state');
+    const placeOrderBtn = document.getElementById('place-order-btn');
+    const validationAlert = document.getElementById('validation-alert');
+    const fullNameInput = document.getElementById('full-name');
+    const checkoutForm = document.getElementById('checkout-form');
+    const successModal = document.getElementById('success-modal');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+    const restoreCartBtn = document.getElementById('restore-cart-btn');
+
+    function updateCartUI() {
+      const totalUnits = toteQty + mugQty;
+      const subtotal = (toteQty * PRICE_TOTE) + (mugQty * PRICE_MUG);
+      const grandTotal = totalUnits > 0 ? (subtotal + SHIPPING_COST) : 0.00;
+
+      // Update Line Items
+      if (toteQtyEl) toteQtyEl.textContent = toteQty;
+      if (mugQtyEl) mugQtyEl.textContent = mugQty;
+      if (toteTotalEl) toteTotalEl.textContent = `$${(toteQty * PRICE_TOTE).toFixed(2)}`;
+      if (mugTotalEl) mugTotalEl.textContent = `$${(mugQty * PRICE_MUG).toFixed(2)}`;
+
+      // Update Line Item Visibility
+      if (cartItemTote) cartItemTote.style.display = toteQty > 0 ? 'flex' : 'none';
+      if (cartItemMug) cartItemMug.style.display = mugQty > 0 ? 'flex' : 'none';
+
+      // Update In-Cart Badges on Goods
+      if (badgeToteCountEl) badgeToteCountEl.textContent = toteQty;
+      if (badgeTote) badgeTote.style.display = toteQty > 0 ? 'block' : 'none';
+
+      if (badgeMugCountEl) badgeMugCountEl.textContent = mugQty;
+      if (badgeMug) badgeMug.style.display = mugQty > 0 ? 'block' : 'none';
+
+      // Update Summary Totals
+      if (summaryQtyCountEl) summaryQtyCountEl.textContent = totalUnits;
+      if (summarySubtotalEl) summarySubtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+      if (summaryShippingEl) summaryShippingEl.textContent = totalUnits > 0 ? `$${SHIPPING_COST.toFixed(2)}` : '$0.00';
+      
+      const formattedGrandTotal = `$${grandTotal.toFixed(2)}`;
+      if (bigOrderTotalEl) bigOrderTotalEl.textContent = formattedGrandTotal;
+      if (ctaTotalLabelEl) ctaTotalLabelEl.textContent = totalUnits > 0 ? `PLACE ORDER — ${formattedGrandTotal}` : 'BAG IS EMPTY';
+
+      if (headerItemsCountEl) {
+        headerItemsCountEl.textContent = `${totalUnits} Item${totalUnits === 1 ? '' : 's'} Loaded`;
+      }
+
+      // Empty State Toggling
+      if (totalUnits === 0) {
+        if (cartItemsContainer) cartItemsContainer.classList.add('hidden');
+        if (emptyCartState) emptyCartState.classList.remove('hidden');
+        if (placeOrderBtn) placeOrderBtn.disabled = true;
+      } else {
+        if (cartItemsContainer) cartItemsContainer.classList.remove('hidden');
+        if (emptyCartState) emptyCartState.classList.add('hidden');
+        if (placeOrderBtn) placeOrderBtn.disabled = false;
+      }
+    }
+
+    // Steppers - Tote
+    document.getElementById('tote-inc')?.addEventListener('click', () => {
+      toteQty++;
+      updateCartUI();
+    });
+    document.getElementById('tote-dec')?.addEventListener('click', () => {
+      if (toteQty > 1) {
+        toteQty--;
+      } else {
+        toteQty = 0;
+      }
+      updateCartUI();
+    });
+    document.getElementById('tote-remove')?.addEventListener('click', () => {
+      toteQty = 0;
+      updateCartUI();
+    });
+
+    // Steppers - Mug
+    document.getElementById('mug-inc')?.addEventListener('click', () => {
+      mugQty++;
+      updateCartUI();
+    });
+    document.getElementById('mug-dec')?.addEventListener('click', () => {
+      if (mugQty > 1) {
+        mugQty--;
+      } else {
+        mugQty = 0;
+      }
+      updateCartUI();
+    });
+    document.getElementById('mug-remove')?.addEventListener('click', () => {
+      mugQty = 0;
+      updateCartUI();
+    });
+
+    // Add Buttons from Goods Column
+    document.getElementById('add-tote-btn')?.addEventListener('click', () => {
+      toteQty++;
+      updateCartUI();
+    });
+    document.getElementById('add-mug-btn')?.addEventListener('click', () => {
+      mugQty++;
+      updateCartUI();
+    });
+
+    // Restore Cart Button
+    restoreCartBtn?.addEventListener('click', () => {
+      toteQty = 1;
+      mugQty = 2;
+      updateCartUI();
+    });
+
+    // Form Submission & Accessible Validation
+    checkoutForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = fullNameInput.value.trim();
+
+      if (!name) {
+        if (validationAlert) validationAlert.classList.remove('hidden');
+        fullNameInput.focus();
+        fullNameInput.classList.add('border-error');
+        // Visual shake feedback
+        fullNameInput.classList.add('translate-x-1');
+        setTimeout(() => fullNameInput.classList.remove('translate-x-1'), 150);
+        return;
+      }
+
+      // Hide error if present
+      if (validationAlert) validationAlert.classList.add('hidden');
+      fullNameInput.classList.remove('border-error');
+
+      // Populate Success Modal
+      const totalUnits = toteQty + mugQty;
+      const subtotal = (toteQty * PRICE_TOTE) + (mugQty * PRICE_MUG);
+      const grandTotal = (subtotal + SHIPPING_COST).toFixed(2);
+
+      const recipientEl = document.getElementById('modal-recipient');
+      const amountEl = document.getElementById('modal-amount');
+      if (recipientEl) recipientEl.textContent = name;
+      if (amountEl) amountEl.textContent = `$${grandTotal}`;
+
+      // Show Modal
+      if (successModal) {
+        successModal.classList.remove('hidden');
+        successModal.classList.add('flex');
+        closeModalBtn?.focus();
+      }
+    });
+
+    // Input error reset on typing
+    fullNameInput?.addEventListener('input', () => {
+      if (fullNameInput.value.trim().length > 0) {
+        if (validationAlert) validationAlert.classList.add('hidden');
+        fullNameInput.classList.remove('border-error');
+      }
+    });
+
+    // Close Modal
+    closeModalBtn?.addEventListener('click', () => {
+      if (successModal) {
+        successModal.classList.add('hidden');
+        successModal.classList.remove('flex');
+      }
+      checkoutForm.reset();
+      toteQty = 1;
+      mugQty = 2;
+      updateCartUI();
+    });
+
+    // Close on Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && successModal && !successModal.classList.contains('hidden')) {
+        successModal.classList.add('hidden');
+        successModal.classList.remove('flex');
+      }
+    });
+
+    // Initial sync
+    updateCartUI();
+  })();
+</script></main><footer class="w-full bg-surface-container-high border-t-4 border-on-surface mt-space-2xl"><div class="max-w-7xl mx-auto px-gutter py-space-xl flex flex-col md:flex-row items-center justify-between gap-space-lg"><div class="flex items-center gap-space-sm"><div class="w-4 h-4 bg-primary border-2 border-on-surface rotate-12"></div><span class="font-headline-sm text-headline-sm uppercase text-on-surface">Apna Bazaar</span><span class="font-body-md text-body-md text-on-surface-variant">— Analog soul, neon inks &amp; Memphis oddities.</span></div><div class="flex items-center gap-space-md font-label-sm text-label-sm uppercase text-on-surface-variant"><span class="px-space-xs py-space-xs bg-tertiary-fixed text-on-tertiary-fixed border-2 border-on-surface shadow-[2px_2px_0px_#1c1b1b]">HAND-PULLED EDITIONS</span><span>© 2024 FYND FUNK STUDIO. ALL RIGHTS RESERVED.</span></div></div></footer></body></html>

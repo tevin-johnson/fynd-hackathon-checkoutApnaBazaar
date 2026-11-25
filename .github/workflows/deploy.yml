@@ -1,0 +1,93 @@
+name: Deploy
+
+# Production deploy to Vercel (Hobby). The `ci` job runs the full CI workflow
+# (lint, typecheck, unit, e2e, audit) in this same run; `deploy` only starts if
+# every CI job passed.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+env:
+  NODE_VERSION: '22.23.5'
+  VERCEL_CLI_VERSION: '66.6.0'
+
+jobs:
+  ci:
+    uses: ./.github/workflows/ci.yml
+    # Reusable workflows can only use permissions the caller grants. The CI
+    # audit job declares pull-requests: write for PR comments (unused on push).
+    permissions:
+      contents: read
+      pull-requests: write
+
+  deploy:
+    name: Deploy to Vercel (production)
+    needs: ci
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    environment:
+      name: production
+      url: ${{ steps.deploy.outputs.url }}
+    permissions:
+      contents: read
+    env:
+      # GitHub encrypted secrets only — never committed, masked in logs.
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+    steps:
+      - name: Require Vercel secrets
+        shell: bash
+        run: |
+          missing=0
+          for name in VERCEL_ORG_ID VERCEL_PROJECT_ID VERCEL_TOKEN; do
+            if [ -z "${!name}" ]; then echo "::error::Missing repository secret $name (see README → Deploy)"; missing=1; fi
+          done
+          exit $missing
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - run: npm ci
+      - name: Install Vercel CLI (pinned)
+        run: npm install --global vercel@${{ env.VERCEL_CLI_VERSION }}
+
+      - run: vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+      - run: vercel build --prod --token=$VERCEL_TOKEN
+      - name: vercel deploy
+        id: deploy
+        shell: bash
+        run: |
+          url=$(vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN)
+          echo "Deployed: $url"
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+
+      - name: Verify security headers (curl -I)
+        shell: bash
+        env:
+          # Set repository variable PRODUCTION_URL (e.g. https://<project>.vercel.app)
+          # to check the public alias; otherwise the deployment URL is used.
+          TARGET: ${{ vars.PRODUCTION_URL || steps.deploy.outputs.url }}
+        run: |
+          echo "Checking $TARGET"
+          curl -sSI --max-time 30 "$TARGET" | tee headers.txt
+          fail=0
+          for h in content-security-policy x-content-type-options x-frame-options referrer-policy permissions-policy; do
+            if grep -qi "^$h:" headers.txt; then echo "✅ $h"; else echo "::error::Missing header: $h"; fail=1; fi
+          done
+          if grep -qi '^content-security-policy:.*script-src[^;]*unsafe-inline' headers.txt; then
+            echo "::error::CSP script-src allows unsafe-inline"; fail=1
+          fi
+          exit $fail

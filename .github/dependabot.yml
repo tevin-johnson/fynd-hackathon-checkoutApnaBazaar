@@ -1,0 +1,12 @@
+version: 2
+updates:
+  # Keeps SHA-pinned actions current (Dependabot rewrites the SHA + version comment).
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
