@@ -2,6 +2,12 @@
 
 Every change ships as a new git tag, so any version can be restored. See README → "Versions and rollback".
 
+## v1.0.1 (2026-11-25)
+
+- Docs: TEST-PLAN.md rewritten for the shipped app (Apna Bazaar, ₹ prices, delivery city). It now records manual results on desktop **and** mobile and adds MT-07 (location autocomplete).
+- Docs: DEF-03 written up in full: root cause (the stamp's `scale(3)` entrance widened the mobile layout viewport), evidence, and proof that the regression assertion fails when the fix is reverted.
+- No app code changes.
+
 ## v1.0.0 (2026-11-25)
 
 First release of **Apna Bazaar**, the mini checkout.
